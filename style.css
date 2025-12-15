@@ -4,21 +4,34 @@
 }
 
 body {
-  font-family: "Segoe UI", sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
-  background: #f8fafc;
-  color: #0f172a;
+  color: #fff;
+  background: #0f172a;
+}
+
+.bg-animation {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top left, #2563eb, transparent),
+              radial-gradient(circle at bottom right, #9333ea, transparent);
+  animation: moveBg 12s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes moveBg {
+  from { filter: hue-rotate(0deg); }
+  to { filter: hue-rotate(60deg); }
 }
 
 nav {
   position: sticky;
   top: 0;
-  background: white;
   display: flex;
   justify-content: space-between;
   padding: 1rem 2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  z-index: 1000;
+  backdrop-filter: blur(10px);
 }
 
 nav ul {
@@ -28,80 +41,60 @@ nav ul {
 }
 
 nav a {
+  color: white;
   text-decoration: none;
-  color: #0f172a;
-  font-weight: 600;
 }
 
 .hero {
-  background: linear-gradient(135deg, #0f172a, #1e40af);
-  color: white;
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 5rem 1rem;
 }
 
 .hero-buttons a {
-  display: inline-block;
   margin: 10px;
-  padding: 12px 20px;
-  background: white;
-  color: #1e40af;
-  border-radius: 25px;
+  padding: 12px 22px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  color: white;
   text-decoration: none;
-  font-weight: bold;
 }
 
 section {
-  max-width: 1000px;
+  max-width: 900px;
   margin: auto;
   padding: 3rem 1rem;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+.glass {
+  background: rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
 }
 
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-}
-
-.timeline-item {
-  background: white;
-  padding: 20px;
+.skill {
   margin-bottom: 20px;
-  border-left: 4px solid #1e40af;
-  border-radius: 8px;
 }
 
-.project-card {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+.bar {
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar div {
+  height: 10px;
+  background: linear-gradient(90deg, #38bdf8, #9333ea);
+}
+
+.timeline .event {
+  margin-bottom: 30px;
+  padding-left: 20px;
+  border-left: 3px solid #38bdf8;
 }
 
 footer {
   text-align: center;
-  padding: 1.5rem;
-  background: #e5e7eb;
-}
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+  padding: 2rem;
+  opacity: 0.7;
 }
