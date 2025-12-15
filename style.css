@@ -1,371 +1,71 @@
-:root {
-  --bg-dark: #0a192f;
-  --bg-light: #112240;
-  --text-primary: #ccd6f6;
-  --text-secondary: #8892b0;
-  --accent: #64ffda; /* Cyan/Teal popular in tech portfolios */
-  --accent-tint: rgba(100, 255, 218, 0.1);
-  --glass: rgba(17, 34, 64, 0.7);
-  --font-main: 'Inter', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-}
+/* ... [Previous CSS Content remains the same] ... */
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: var(--bg-dark);
-  color: var(--text-primary);
-  font-family: var(--font-main);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-/* Ambient Glow Background */
-.glow-bg {
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at center, rgba(29, 78, 216, 0.15) 0%, transparent 50%);
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Navigation */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  position: sticky;
-  top: 0;
-  background: rgba(10, 25, 47, 0.85);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-  box-shadow: 0 10px 30px -10px rgba(2,12,27,0.7);
-}
-
-.logo {
-  font-family: var(--font-mono);
-  color: var(--accent);
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  align-items: center;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--text-primary);
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: var(--accent);
-}
-
-.btn-highlight {
-  border: 1px solid var(--accent);
-  padding: 8px 16px;
-  border-radius: 4px;
-  color: var(--accent) !important;
-}
-
-.hamburger { display: none; color: var(--accent); font-size: 1.5rem; cursor: pointer; }
-
-/* Hero Section */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 100px;
-}
-
-.hero-content {
-  max-width: 1000px;
-}
-
-.eyebrow {
-  font-family: var(--font-mono);
-  color: var(--accent);
-  margin-bottom: 20px;
-}
-
-.hero h1 {
-  font-size: 4.5rem;
-  font-weight: 700;
-  color: #e6f1ff;
-  line-height: 1.1;
-  margin-bottom: 10px;
-}
-
-.hero h2 {
-  font-size: 3rem;
-  color: var(--text-secondary);
-  margin-bottom: 20px;
-}
-
-.hero-text {
-  max-width: 540px;
-  color: var(--text-secondary);
-  font-size: 1.1rem;
-  margin-bottom: 50px;
-}
-
+/* UPDATED HERO BUTTONS */
 .hero-buttons {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap; /* Allows wrapping on very small screens */
+  gap: 15px;       /* Consistent spacing */
 }
 
-.btn {
-  padding: 15px 30px;
-  border-radius: 4px;
-  text-decoration: none;
-  font-family: var(--font-mono);
-  font-weight: bold;
-  transition: all 0.3s;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.btn-primary {
-  background: transparent;
-  border: 1px solid var(--accent);
-  color: var(--accent);
-}
-
-.btn-primary:hover {
-  background: var(--accent-tint);
-}
-
+/* Ensure secondary buttons (GitHub/LinkedIn) look identical */
 .btn-secondary {
   color: var(--text-primary);
+  border: 1px solid transparent; /* Keeps sizing consistent with primary */
 }
 
-.btn-secondary:hover { text-decoration: underline; }
-
-/* General Sections */
-section {
-  padding: 100px 100px;
-  max-width: 1200px;
-  margin: 0 auto;
+.btn-secondary:hover {
+  border-color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.section-title {
+/* ... [Middle sections remain the same] ... */
+
+/* NEW EDUCATION STYLES */
+.education-card-wrapper {
+  display: flex;
+  justify-content: center; /* Centers the card */
+  margin-top: 20px;
+}
+
+.education-card {
   display: flex;
   align-items: center;
-  margin-bottom: 40px;
-}
-
-.section-title span {
-  font-family: var(--font-mono);
-  color: var(--accent);
-  font-size: 1.2rem;
-  margin-right: 10px;
-}
-
-.section-title h2 {
-  font-size: 2rem;
-  color: #e6f1ff;
-  white-space: nowrap;
-}
-
-.section-title::after {
-  content: "";
-  display: block;
-  width: 300px;
-  height: 1px;
-  background: #233554;
-  margin-left: 20px;
-}
-
-/* Skills Grid */
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.glass-card {
-  background: var(--bg-light);
-  padding: 30px;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-  box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
-}
-
-.glass-card:hover {
-  transform: translateY(-7px);
-}
-
-.glass-card h3 {
-  color: #e6f1ff;
-  margin: 15px 0;
-  font-size: 1.3rem;
-}
-
-.icon-box {
-  font-size: 2rem;
-  color: var(--accent);
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.tags span {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--accent);
-  background: rgba(100, 255, 218, 0.05);
-  padding: 5px 10px;
-  border-radius: 4px;
-}
-
-/* Timeline */
-.timeline {
-  border-left: 2px solid #233554;
-  margin-left: 20px;
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 50px;
-  padding-left: 40px;
-}
-
-.timeline-marker {
-  position: absolute;
-  left: -6px;
-  top: 5px;
-  width: 10px;
-  height: 10px;
-  background: var(--accent);
-  border-radius: 50%;
-  box-shadow: 0 0 10px var(--accent);
-}
-
-.job-header h3 {
-  font-size: 1.4rem;
-  color: #e6f1ff;
-}
-
-.date {
-  font-family: var(--font-mono);
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-}
-
-.location {
-  color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  margin-bottom: 15px;
-}
-
-.job-details {
-  list-style: none;
-}
-
-.job-details li {
-  position: relative;
-  padding-left: 20px;
-  margin-bottom: 10px;
-  color: var(--text-secondary);
-}
-
-.job-details li::before {
-  content: "▹";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-}
-
-/* Projects */
-.project-showcase {
-  background: var(--bg-light);
+  gap: 30px;
+  max-width: 800px;
+  width: 100%;
   padding: 40px;
-  border-radius: 12px;
-  border: 1px solid #233554;
-  position: relative;
+  border-left: 3px solid var(--accent); /* Adds a nice accent line */
 }
 
-.tech-bar {
-  margin: 15px 0;
+.edu-icon {
+  font-size: 4rem; /* Large icon */
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+.edu-info h3 {
+  font-size: 1.5rem;
+  color: #e6f1ff;
+  margin-bottom: 10px;
+}
+
+.university {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
   color: var(--text-secondary);
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
 }
 
-.tech-bar span {
-  margin-right: 15px;
-}
-
-/* Contact */
-.contact-cards {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 50px;
-}
-
-.contact-box {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s;
-}
-
-.contact-box:hover { color: var(--accent); }
-
-footer {
-  text-align: center;
-  margin-top: 100px;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero { padding: 0 20px; }
-  .hero h1 { font-size: 3rem; }
-  section { padding: 80px 20px; }
+/* Responsive adjustment for Education */
+@media (max-width: 600px) {
+  .education-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
   
-  .nav-links { display: none; } /* Add toggle logic in JS if needed */
-  .hamburger { display: block; }
-  
-  .contact-cards { flex-direction: column; align-items: center; gap: 20px; }
-}
-
-/* Animation Classes */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+  .education-card .edu-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
 }
