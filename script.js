@@ -1,31 +1,17 @@
-const roles = [
-  "Senior Data Engineer",
-  "Databricks & Spark Specialist",
-  "Cloud Data Architect",
-  "Streaming & Big Data Expert"
-];
+const sections = document.querySelectorAll("section");
 
-let roleIndex = 0;
-let charIndex = 0;
-const typingElement = document.querySelector(".typing");
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+}, { threshold: 0.1 });
 
-function typeRole() {
-  if (charIndex < roles[roleIndex].length) {
-    typingElement.textContent += roles[roleIndex][charIndex++];
-    setTimeout(typeRole, 100);
-  } else {
-    setTimeout(eraseRole, 2000);
-  }
-}
-
-function eraseRole() {
-  if (charIndex > 0) {
-    typingElement.textContent = roles[roleIndex].substring(0, --charIndex);
-    setTimeout(eraseRole, 50);
-  } else {
-    roleIndex = (roleIndex + 1) % roles.length;
-    setTimeout(typeRole, 500);
-  }
-}
-
-typeRole();
+sections.forEach(sec => {
+  sec.style.opacity = 0;
+  sec.style.transform = "translateY(40px)";
+  sec.style.transition = "all 0.8s ease";
+  observer.observe(sec);
+});
