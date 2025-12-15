@@ -1,17 +1,38 @@
-const sections = document.querySelectorAll("section");
+// Intersection Observer for Scroll Animations (More efficient than window.onscroll)
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.1
+};
 
-const observer = new IntersectionObserver(entries => {
+const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = 1;
-      entry.target.style.transform = "translateY(0)";
+      entry.target.classList.add('active');
     }
   });
-}, { threshold: 0.1 });
+}, observerOptions);
 
-sections.forEach(sec => {
-  sec.style.opacity = 0;
-  sec.style.transform = "translateY(40px)";
-  sec.style.transition = "all 0.8s ease";
-  observer.observe(sec);
+document.querySelectorAll('.reveal').forEach(section => {
+  observer.observe(section);
+});
+
+// Mobile Menu Toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+  const isFlex = navLinks.style.display === 'flex';
+  navLinks.style.display = isFlex ? 'none' : 'flex';
+  
+  // Basic mobile styling injection for toggle
+  if (!isFlex) {
+    navLinks.style.position = 'absolute';
+    navLinks.style.top = '70px';
+    navLinks.style.right = '0';
+    navLinks.style.backgroundColor = '#112240';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.width = '100%';
+    navLinks.style.padding = '20px';
+  }
 });
