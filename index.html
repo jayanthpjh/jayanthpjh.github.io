@@ -5,17 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jay Pasupuleti | Senior Data Engineer</title>
 
-  <!-- Icons -->
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-  <!-- Styles -->
   <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
 
+<!-- Animated Background -->
+<div class="bg-animation"></div>
+
 <nav>
-  <div class="logo">Jay P.</div>
+  <div class="logo">Jay.</div>
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -27,31 +30,46 @@
 
 <header class="hero">
   <h1>Jay Pasupuleti</h1>
-  <p>Senior Data Engineer • Databricks • Spark • AWS • GCP</p>
+  <h2><span class="typing"></span></h2>
 
   <div class="hero-buttons">
-    <a href="assets/Jay_Pasupuleti_Senior_Data_Engineer.pdf" target="_blank">Download Resume</a>
+    <a href="assets/Jay_Pasupuleti_Senior_Data_Engineer.pdf" target="_blank">Resume</a>
     <a href="https://github.com/YOUR_GITHUB" target="_blank">GitHub</a>
+    <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank">LinkedIn</a>
   </div>
 </header>
 
-<section id="about" class="reveal">
+<section id="about" class="glass reveal">
   <h2>About Me</h2>
   <p>
-    Senior Data Engineer with 5+ years of experience building scalable batch and streaming
-    data platforms across AWS, Azure, and GCP. Specialized in Databricks, Apache Spark,
-    PySpark, and Delta Lake within healthcare and insurance domains.
+    Senior Data Engineer with 5+ years of experience architecting scalable
+    batch and real-time data platforms across AWS, Azure, and GCP.
+    Expert in Databricks, Apache Spark, PySpark, and Delta Lake with deep
+    exposure to healthcare and insurance analytics.
   </p>
 </section>
 
 <section id="skills" class="reveal">
-  <h2>Technical Skills</h2>
-  <div class="cards">
-    <div class="card"><i class="fa-solid fa-database"></i> Databricks, Spark, PySpark</div>
-    <div class="card"><i class="fa-solid fa-cloud"></i> AWS, GCP, Azure</div>
-    <div class="card"><i class="fa-solid fa-stream"></i> Kinesis, Pub/Sub</div>
-    <div class="card"><i class="fa-solid fa-code"></i> Python, SQL, Java</div>
-    <div class="card"><i class="fa-solid fa-gear"></i> Airflow, Terraform, CI/CD</div>
+  <h2>Core Skills</h2>
+
+  <div class="skill">
+    <span>Databricks & Spark</span>
+    <div class="bar"><div style="width:95%"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>AWS / GCP / Azure</span>
+    <div class="bar"><div style="width:92%"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>Streaming (Kinesis, Pub/Sub)</span>
+    <div class="bar"><div style="width:85%"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>SQL & Python</span>
+    <div class="bar"><div style="width:90%"></div></div>
   </div>
 </section>
 
@@ -59,48 +77,49 @@
   <h2>Experience</h2>
 
   <div class="timeline">
-    <div class="timeline-item">
-      <h3>Senior Data Engineer – Nationwide Insurance</h3>
-      <span>2023 – Present</span>
+    <div class="event">
+      <h3>Senior Data Engineer — Nationwide Insurance</h3>
       <p>
-        Built Databricks-based Spark pipelines processing 1M+ records/hour and 10+ TB/month.
-        Reduced latency by 30% and improved analytics performance by 45%.
+        Built Databricks Spark pipelines processing 1M+ records/hour and 10+ TB/month.
+        Reduced latency by 30%, optimized query performance by 60%, and enabled
+        cross-cloud analytics between AWS and GCP.
       </p>
     </div>
 
-    <div class="timeline-item">
-      <h3>Data Engineer – Cigna Health</h3>
-      <span>2020 – 2022</span>
+    <div class="event">
+      <h3>Data Engineer — Cigna Health</h3>
       <p>
-        Designed large-scale ETL pipelines using Databricks, AWS Glue, Snowflake, and Kinesis,
-        achieving 99.8% reliability and 40% faster processing.
+        Designed scalable ETL and streaming pipelines using Databricks, AWS Glue,
+        Snowflake, and Kinesis. Achieved 99.8% pipeline reliability and reduced
+        ETL runtime by 40%.
       </p>
     </div>
 
-    <div class="timeline-item">
-      <h3>Data Engineer – Yes Bank</h3>
-      <span>2019 – 2020</span>
+    <div class="event">
+      <h3>Data Engineer — Yes Bank</h3>
       <p>
-        Developed enterprise ETL workflows using Azure Data Factory and Synapse, supporting
-        real-time BI dashboards for 100+ users.
+        Implemented Azure-based data warehouses using ADF and Synapse, supporting
+        real-time BI dashboards for 100+ stakeholders.
       </p>
     </div>
   </div>
 </section>
 
 <section id="projects" class="reveal">
-  <h2>Key Project</h2>
-  <div class="project-card">
+  <h2>Signature Project</h2>
+
+  <div class="glass project">
     <h3>Unstructured Data Processing Platform</h3>
     <p>
-      Built Spark pipelines using Databricks notebooks to process logs and unstructured data
-      from AWS S3 and GCP Cloud Storage. Implemented Delta Lake, reducing processing time
-      from hours to under 30 minutes.
+      Designed a Databricks-based Spark platform to ingest logs and unstructured
+      data from AWS S3 and GCP Cloud Storage. Implemented Delta Lake for ACID
+      compliance, reducing processing time from hours to under 30 minutes and
+      improving data quality by 40%.
     </p>
   </div>
 </section>
 
-<section id="contact" class="reveal">
+<section id="contact" class="glass reveal">
   <h2>Contact</h2>
   <p><i class="fa-solid fa-envelope"></i> pasupuletij398@gmail.com</p>
   <p><i class="fa-solid fa-location-dot"></i> United States</p>
