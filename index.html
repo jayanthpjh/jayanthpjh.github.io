@@ -1,252 +1,612 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Portfolio of Jay Pasupuleti, Senior Data Engineer.">
-  <title>Jayanth Pasupuleti | Senior Data Engineer</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#f6f8ff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)" />
+  <title>Jayanth Pasupuleti | Data Engineer</title>
+  <meta name="description" content="Portfolio of Jayanth Pasupuleti — Data Engineer (AWS • Azure • GCP • DBT • Spark • Snowflake • Redshift • BigQuery • Streamlit)." />
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+  <a class="skip" href="#about">Skip to content</a>
 
-<div class="glow-bg"></div>
-
-<nav>
-  <div class="logo"><span class="accent"></span></div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#stack">Tech Stack</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Work</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact" class="btn-highlight">Contact</a></li>
-  </ul>
-  <div class="hamburger">
-    <i class="fa-solid fa-bars"></i>
+  <!-- Top progress bar -->
+  <div class="progress" aria-hidden="true">
+    <div class="progress__bar" id="progressBar"></div>
   </div>
-</nav>
 
-<header class="hero">
-  <div class="hero-content">
-    <p class="eyebrow">Hello, I am</p>
-    <h1>Jayanth Pasupuleti</h1>
-    <h2 class="typing-container">Senior Data Engineer</h2>
-    <p class="hero-text">
-      Architecting scalable <strong>Multi-Cloud ETL Pipelines</strong> and Data Lakes. 
-      Specializing in <strong>Databricks, Spark, and AWS</strong> to process Terabytes of data with 
-      cost-effective, high-velocity architectures.
-    </p>
-    
-    <div class="hero-buttons">
-      <a href="assets/Jay_Pasupuleti_Senior_Data_Engineer.pdf" target="_blank" class="btn btn-primary">
-        <i class="fa-solid fa-file-arrow-down"></i> Resume
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">Jayanth<span class="brand__dot">.</span></span>
       </a>
+
+      <nav class="nav__links" aria-label="Primary navigation">
+        <a class="nav__link" href="#about">About</a>
+        <a class="nav__link" href="#skills">Skills</a>
+        <a class="nav__link" href="#experience">Experience</a>
+        <a class="nav__link" href="#projects">Projects</a>
+        <a class="nav__link" href="#contact">Contact</a>
+      </nav>
+
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__cta">
+        <a class="btn btn--ghost" href="#contact">
+          <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+          <span>Let’s talk</span>
+        </a>
+        <a class="btn" href="assets/Jayanth_Pasupuleti_Resume.pdf" target="_blank" rel="noopener">
+          <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+          <span>Resume</span>
+        </a>
       
-      <a href="https://www.linkedin.com/in/pjayanth3998" target="_blank" class="btn btn-secondary">
-        <i class="fa-brands fa-linkedin"></i> LinkedIn
-      </a>
-
-      <a href="https://github.com/YOUR_GITHUB" target="_blank" class="btn btn-secondary">
-        <i class="fa-brands fa-github"></i> GitHub
-      </a>
-    </div>
-  </div>
-</header>
-
-<section id="about" class="reveal">
-  <div class="section-title">
-    <span>01.</span>
-    <h2>About Me</h2>
-  </div>
-  <div class="content-wrapper">
-    <p>
-      I am a Senior Data Engineer with over <strong>5 years of experience</strong>creating robust data solutions. 
-      My expertise lies in integrating structured and unstructured data across <strong>AWS, Azure, and GCP</strong>.
-      <br><br>
-      I focus on optimizing data quality and security, consistently delivering performance improvements such as a 
-      <strong>20% increase in processing efficiency</strong>. I bridge the gap between complex business needs 
-      and technical outcomes in dynamic environments like Healthcare and Insurance.
-    </p>
-  </div>
-</section>
-
-<section id="stack" class="reveal">
-  <div class="section-title">
-    <span>02.</span>
-    <h2>Technical Arsenal</h2>
-  </div>
-  
-  <div class="grid-3">
-    <div class="glass-card">
-      <div class="icon-box"><i class="fa-solid fa-cloud"></i></div>
-      <h3>Cloud & Compute</h3>
-      <div class="tags">
-        <span>AWS (Glue, Lambda, EMR)</span>
-        <span>GCP (BigQuery, Dataflow)</span>
-        <span>Azure (Synapse, ADF)</span>
-        <span>Databricks</span>
-        <span>Snowflake</span>
-      </div>
+        <button class="iconbtn iconbtn--theme" id="themeToggle" aria-label="Toggle theme" title="Toggle light/dark">
+          <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+        </button>
+</div>
     </div>
 
-    <div class="glass-card">
-      <div class="icon-box"><i class="fa-solid fa-layer-group"></i></div>
-      <h3>Big Data Processing</h3>
-      <div class="tags">
-        <span>Apache Spark</span>
-        <span>PySpark</span>
-        <span>Delta Lake</span>
-        <span>Hadoop</span>
-        <span>Kafka/Kinesis</span>
-        <span>Airflow</span>
-      </div>
-    </div>
-
-    <div class="glass-card">
-      <div class="icon-box"><i class="fa-solid fa-code"></i></div>
-      <h3>Code & DevOps</h3>
-      <div class="tags">
-        <span>Python</span>
-        <span>SQL</span>
-        <span>Java</span>
-        <span>Terraform</span>
-        <span>Docker</span>
-        <span>CI/CD (Jenkins/Git)</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="experience" class="reveal">
-  <div class="section-title">
-    <span>03.</span>
-    <h2>Professional Experience</h2>
-  </div>
-
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-marker"></div>
-      <div class="timeline-content">
-        <div class="job-header">
-          <h3>Senior Data Engineer @ Nationwide Insurance</h3>
-          <span class="date">05/2023 – Present</span>
+    <!-- Mobile drawer -->
+    <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+      <div class="drawer__panel">
+        <div class="drawer__head">
+          <span class="drawer__title">Menu</span>
+          <button class="iconbtn" id="closeDrawer" aria-label="Close menu">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
         </div>
-        <p class="location">Columbus, OH</p>
-        <ul class="job-details">
-          <li>Engineered Spark pipelines processing <strong>1M+ records/hour</strong> and <strong>10+ TB/month</strong>.</li>
-          <li>Reduced data latency by <strong>30%</strong> and improved analytics performance by <strong>45%</strong>.</li>
-          <li>Led migration of 30+ legacy workloads to GCP (BigQuery) with zero data loss.</li>
-          <li>Automated cross-cloud flows (AWS/GCP) using Lambda and Step Functions.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-marker"></div>
-      <div class="timeline-content">
-        <div class="job-header">
-          <h3>Data Engineer @ Cigna Health</h3>
-          <span class="date">09/2020 – 08/2022</span>
+        <div class="drawer__links">
+          <a href="#about" class="drawer__link">About</a>
+          <a href="#skills" class="drawer__link">Skills</a>
+          <a href="#experience" class="drawer__link">Experience</a>
+          <a href="#projects" class="drawer__link">Projects</a>
+          <a href="#contact" class="drawer__link">Contact</a>
         </div>
-        <p class="location">Chennai, Tamil Nadu</p>
-        <ul class="job-details">
-          <li>Built real-time pipelines with AWS Kinesis, reducing latency to under <strong>60 seconds</strong>.</li>
-          <li>Achieved <strong>99.8% pipeline reliability</strong> using CloudWatch monitoring.</li>
-          <li>Optimized Redshift/Snowflake models, reducing query times by <strong>50%</strong> and storage costs by <strong>30%</strong>.</li>
-          <li>Automated infrastructure provisioning using Terraform across 10+ environments.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-marker"></div>
-      <div class="timeline-content">
-        <div class="job-header">
-          <h3>Data Engineer @ Yes Bank</h3>
-          <span class="date">04/2019 – 04/2020</span>
+        <div class="drawer__actions">
+          <button class="btn btn--ghost" id="themeToggle2" type="button"><i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i> Theme</button>
+          <a class="btn btn--ghost" href="#contact"><i class="fa-regular fa-paper-plane" aria-hidden="true"></i> Let’s talk</a>
+          <a class="btn" href="assets/Jayanth_Pasupuleti_Resume.pdf" target="_blank" rel="noopener"><i class="fa-regular fa-file-lines" aria-hidden="true"></i> Resume</a>
         </div>
-        <p class="location">Mumbai, India</p>
-        <ul class="job-details">
-          <li>Developed ETL workflows using Azure Data Factory and Synapse for 100+ users.</li>
-          <li>Boosted query performance by <strong>40%</strong> via dimensional modeling strategies.</li>
-          <li>Implemented CI/CD pipelines reducing deployment time by <strong>70%</strong>.</li>
-        </ul>
       </div>
+      <button class="drawer__backdrop" id="backdrop" aria-label="Close menu"></button>
     </div>
-  </div>
-</section>
+  </header>
 
-<section id="projects" class="reveal">
-  <div class="section-title">
-    <span>04.</span>
-    <h2>Featured Project</h2>
-  </div>
-  
-  <div class="project-showcase">
-    <div class="project-details">
-      <h3>Unstructured Data Ingestion Platform</h3>
-      <div class="tech-bar">
-        <span>Spark</span><span>Databricks</span><span>AWS S3</span><span>GCP Storage</span>
+  <main>
+    <!-- Hero -->
+    <section class="hero" aria-label="Intro">
+      <canvas class="hero__canvas" id="stars" aria-hidden="true"></canvas>
+
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow reveal">Senior Data Engineer</p>
+          <h1 class="hero__title reveal">
+            Building <span class="glow">high‑trust</span> data platforms that scale across cloud.
+          </h1>
+          <p class="hero__lead reveal">
+            5+ years delivering ETL/ELT pipelines, DBT modeling, streaming ingestion, and performance tuning in regulated
+            banking & healthcare environments—across AWS, Azure, and GCP.
+          </p>
+
+          <div class="hero__actions reveal">
+            <a class="btn btn--primary" href="#projects">
+              <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+              <span>View projects</span>
+            </a>
+            <button class="btn btn--ghost" id="copyEmail">
+              <i class="fa-regular fa-copy" aria-hidden="true"></i>
+              <span>Copy email</span>
+            </button>
+          </div>
+
+          <div class="pillrow reveal" aria-label="Highlights">
+            <span class="pill"><i class="fa-brands fa-aws" aria-hidden="true"></i> AWS</span>
+            <span class="pill"><i class="fa-brands fa-microsoft" aria-hidden="true"></i> Azure</span>
+            <span class="pill"><i class="fa-brands fa-google" aria-hidden="true"></i> GCP</span>
+            <span class="pill"><i class="fa-solid fa-code-branch" aria-hidden="true"></i> DBT</span>
+            <span class="pill"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> BI</span>
+          </div>
+        </div>
+
+        <div class="hero__panel reveal">
+          <div class="panel">
+            <div class="panel__top">
+              <div class="avatar" aria-hidden="true">
+                <div class="avatar__ring"></div>
+                <div class="avatar__core">JP</div>
+              </div>
+              <div>
+                <div class="panel__name">Jayanth Pasupuleti</div>
+                <div class="panel__meta">Data Engineer • Cloud & Analytics</div>
+              </div>
+            </div>
+
+            <div class="panel__stats" role="list">
+              <div class="stat" role="listitem">
+                <div class="stat__value"><span data-count="20">0</span>+</div>
+                <div class="stat__label">ETL pipelines delivered</div>
+              </div>
+              <div class="stat" role="listitem">
+                <div class="stat__value"><span data-count="1000000">0</span>+</div>
+                <div class="stat__label">records/hour streaming</div>
+              </div>
+              <div class="stat" role="listitem">
+                <div class="stat__value"><span data-count="60">0</span>%</div>
+                <div class="stat__label">latency reduction</div>
+              </div>
+              <div class="stat" role="listitem">
+                <div class="stat__value"><span data-count="50">0</span>+</div>
+                <div class="stat__label">workflows CI/CD enabled</div>
+              </div>
+            </div>
+
+            <div class="panel__tags">
+              <span class="tag">BigQuery</span>
+              <span class="tag">Redshift</span>
+              <span class="tag">Snowflake</span>
+              <span class="tag">Dataflow</span>
+              <span class="tag">Spark</span>
+              <span class="tag">Airflow</span>
+            </div>
+
+            <div class="panel__note">
+              <i class="fa-regular fa-circle-check" aria-hidden="true"></i>
+              <span>Open to Data Engineering & Analytics Engineering roles.</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <p>
-        Engineered a comprehensive pipeline to ingest log files and multimedia content. 
-        Leveraged <strong>PySpark and Hadoop</strong> to integrate AWS S3 and GCP Cloud Storage for seamless multi-cloud transfer.
-        <br><br>
-        <strong>Result:</strong> Reduced processing time from hours to <strong>under 30 minutes</strong> and improved extraction efficiency by <strong>50%</strong>.
-      </p>
-    </div>
-  </div>
-</section>
 
-<section id="education" class="reveal">
-  <div class="section-title">
-    <span>05.</span>
-    <h2>Education</h2>
-  </div>
-  
-  <div class="education-card-wrapper">
-    <div class="glass-card education-card">
-      <div class="edu-icon">
-        <i class="fa-solid fa-graduation-cap"></i>
+      <div class="hero__fade" aria-hidden="true"></div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">About</h2>
+          <p class="section__subtitle">A quick snapshot of what I build and how I think.</p>
+        </div>
+
+        <div class="about grid2">
+          <div class="card reveal">
+            <h3 class="card__title">Summary</h3>
+            <p class="muted">
+              Data Engineer with 5+ years of experience designing, building, and optimizing scalable data pipelines across
+              cloud and hybrid environments within highly regulated domains (banking & healthcare). Strong expertise in
+              DBT-based data modeling and transformation, end-to-end ETL/ELT development, and data lineage & quality.
+              Proven ability to build interactive Streamlit apps for validation, monitoring, and stakeholder-facing analytics.
+              Experienced in performance tuning, cost optimization, monitoring & alerting using native cloud observability tools.
+            </p>
+
+            <div class="divider"></div>
+
+            <div class="kpis">
+              <div class="kpi">
+                <div class="kpi__icon"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i></div>
+                <div>
+                  <div class="kpi__title">Performance first</div>
+                  <div class="kpi__text">Partitioning, clustering, UDFs, RDBMS tuning, and cost-aware compute.</div>
+                </div>
+              </div>
+
+              <div class="kpi">
+                <div class="kpi__icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
+                <div>
+                  <div class="kpi__title">Governance & trust</div>
+                  <div class="kpi__text">Schema tests, lineage, observability, and security controls in regulated data.</div>
+                </div>
+              </div>
+
+              <div class="kpi">
+                <div class="kpi__icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
+                <div>
+                  <div class="kpi__title">Self-service analytics</div>
+                  <div class="kpi__text">Dashboards and Streamlit experiences that reduce ad-hoc SQL dependency.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card--shine reveal">
+            <h3 class="card__title">Core strengths</h3>
+
+            <ul class="checklist">
+              <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i> Scalable batch + streaming pipelines (ETL/ELT)</li>
+              <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i> DBT modeling, testing, docs & incremental strategies</li>
+              <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i> Multi-cloud orchestration (AWS ↔ GCP ↔ Azure)</li>
+              <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i> Observability: logging, metrics, alerting, incident triage</li>
+              <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i> BI delivery (Power BI / Tableau / QuickSight / Looker)</li>
+              <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i> CI/CD and IaC automation (Terraform, pipelines)</li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <div class="callout">
+              <div class="callout__icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
+              <div class="callout__body">
+                <div class="callout__title">Design philosophy</div>
+                <div class="callout__text">
+                  Start with the business question → model the grain → instrument quality → automate deployment → ship
+                  insights with measurable impact.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <div class="edu-info">
-        <h3>Master of Information Systems Management</h3>
-        <span class="university">Union Commonwealth University</span>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Skills</h2>
+          <p class="section__subtitle">A modern data stack across platforms, pipelines, and analytics.</p>
+        </div>
+
+        <div class="skills">
+          <article class="skillcard reveal">
+            <div class="skillcard__icon"><i class="fa-solid fa-code" aria-hidden="true"></i></div>
+            <h3>Programming</h3>
+            <p class="muted">Python, Java</p>
+          </article>
+
+          <article class="skillcard reveal">
+            <div class="skillcard__icon"><i class="fa-solid fa-cloud" aria-hidden="true"></i></div>
+            <h3>Cloud platforms</h3>
+            <p class="muted">AWS • Azure • GCP (Glue, Lambda, ADF, Synapse, BigQuery, Dataflow…)</p>
+          </article>
+
+          <article class="skillcard reveal">
+            <div class="skillcard__icon"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></div>
+            <h3>ETL / Orchestration</h3>
+            <p class="muted">Airflow, DataStage, Talend, Informatica, SSIS, Step Functions</p>
+          </article>
+
+          <article class="skillcard reveal">
+            <div class="skillcard__icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></div>
+            <h3>Modeling & Warehousing</h3>
+            <p class="muted">Dimensional modeling, CDC, DBT, Snowflake, Redshift, BigQuery</p>
+          </article>
+
+          <article class="skillcard reveal">
+            <div class="skillcard__icon"><i class="fa-solid fa-database" aria-hidden="true"></i></div>
+            <h3>Databases</h3>
+            <p class="muted">SQL Server, PostgreSQL, MySQL, AuroraDB • NoSQL/Cosmos DB</p>
+          </article>
+
+          <article class="skillcard reveal">
+            <div class="skillcard__icon"><i class="fa-solid fa-cubes" aria-hidden="true"></i></div>
+            <h3>Big data</h3>
+            <p class="muted">Spark, PySpark, Hadoop, EMR, Databricks, Delta Lake, Parquet</p>
+          </article>
+
+          <article class="skillcard reveal">
+            <div class="skillcard__icon"><i class="fa-brands fa-git-alt" aria-hidden="true"></i></div>
+            <h3>Dev practices</h3>
+            <p class="muted">Git, CI/CD, Agile/Scrum, Terraform, Cloud pipelines</p>
+          </article>
+
+          <article class="skillcard reveal">
+            <div class="skillcard__icon"><i class="fa-solid fa-chart-pie" aria-hidden="true"></i></div>
+            <h3>BI & Apps</h3>
+            <p class="muted">Power BI, Tableau, QuickSight, Looker, Streamlit</p>
+          </article>
+        </div>
+
+        <div class="marquee reveal" aria-hidden="true">
+          <div class="marquee__track">
+            <span>AWS Glue</span><span>DBT</span><span>BigQuery</span><span>Redshift</span><span>Snowflake</span><span>Dataflow</span>
+            <span>Pub/Sub</span><span>Kinesis</span><span>Airflow</span><span>Spark</span><span>Streamlit</span><span>Terraform</span>
+            <span>AWS Glue</span><span>DBT</span><span>BigQuery</span><span>Redshift</span><span>Snowflake</span><span>Dataflow</span>
+            <span>Pub/Sub</span><span>Kinesis</span><span>Airflow</span><span>Spark</span><span>Streamlit</span><span>Terraform</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="contact" class="reveal">
-  <h2>Let's Connect</h2>
-  <p class="contact-sub">Always open to discussing Data Engineering & Cloud Architecture.</p>
-  
-  <div class="contact-cards">
-    <a href="mailto:pasupuletij398@gmail.com" class="contact-box">
-      <i class="fa-solid fa-envelope"></i>
-      <span>pasupuletij398@gmail.com</span>
-    </a>
-    <div class="contact-box">
-      <i class="fa-solid fa-phone"></i>
-      <span>+1 747-363-7540</span>
-    </div>
-  </div>
-  
-  <footer>
-    <p>© 2025 Jayanth Pasupuleti. Senior Data Engineer.</p>
-  </footer>
-</section>
+    <!-- Experience -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Experience</h2>
+          <p class="section__subtitle">Impact-driven work across insurance, healthcare, and banking.</p>
+        </div>
 
-<script src="script.js"></script>
+        <div class="timeline">
+          <article class="xp reveal">
+            <div class="xp__dot" aria-hidden="true"></div>
+            <header class="xp__head">
+              <div>
+                <h3 class="xp__role">Senior Data Engineer</h3>
+                <div class="xp__meta">Nationwide Insurance • Columbus, OH • May 2023 – Present</div>
+              </div>
+              <div class="xp__stack">
+                <span class="tag">GCP Dataflow</span><span class="tag">BigQuery</span><span class="tag">Pub/Sub</span>
+                <span class="tag">AWS Lambda</span><span class="tag">Redshift</span><span class="tag">DBT</span>
+              </div>
+            </header>
+            <ul class="bullets">
+              <li>Built 20+ pipelines using GCP Dataflow/BigQuery/Cloud Functions, improving real-time analytics performance by 45%.</li>
+              <li>Delivered streaming ingestion via Pub/Sub + Cloud Functions for 1M+ records/hour; reduced latency by ~30%.</li>
+              <li>Optimized BigQuery/Redshift models (partitioning + UDFs), cutting query latency by 60% and storage costs by 25%.</li>
+              <li>Automated cross-cloud workflows with AWS Lambda + Step Functions + CodePipeline; improved refresh times by ~40%.</li>
+              <li>Built DBT models with incremental loads, schema tests, and documentation; enabled trusted analytics delivery.</li>
+              <li>Shipped Looker dashboards for 150+ stakeholders, improving operational efficiency by 20%.</li>
+            </ul>
+          </article>
+
+          <article class="xp reveal">
+            <div class="xp__dot" aria-hidden="true"></div>
+            <header class="xp__head">
+              <div>
+                <h3 class="xp__role">Data Engineer</h3>
+                <div class="xp__meta">Cigna Health • Chennai, India • Sep 2020 – Aug 2022</div>
+              </div>
+              <div class="xp__stack">
+                <span class="tag">AWS Glue</span><span class="tag">Snowflake</span><span class="tag">Redshift</span>
+                <span class="tag">Kinesis</span><span class="tag">CloudWatch</span><span class="tag">Tableau</span>
+              </div>
+            </header>
+            <ul class="bullets">
+              <li>Delivered 15+ ELT pipelines using AWS Glue + Python + Snowflake, transforming data from 10+ S3 buckets.</li>
+              <li>Built real-time streaming with Kinesis (sub-60s latency) to support high transaction volumes.</li>
+              <li>Tuned Redshift performance (modeling + RDBMS best practices), reducing query times by ~50% and storage by ~30%.</li>
+              <li>Implemented monitoring/logging with CloudWatch/CloudTrail to achieve 99.8% pipeline uptime.</li>
+              <li>Built QuickSight + Tableau dashboards for 20+ teams, reducing manual reporting by 60%.</li>
+              <li>Enabled IaC + CI with Terraform/CloudFormation + Dockerized jobs to scale deployments across environments.</li>
+            </ul>
+          </article>
+
+          <article class="xp reveal">
+            <div class="xp__dot" aria-hidden="true"></div>
+            <header class="xp__head">
+              <div>
+                <h3 class="xp__role">Data Engineer</h3>
+                <div class="xp__meta">Yes Bank • Mumbai, India • Apr 2019 – Apr 2020</div>
+              </div>
+              <div class="xp__stack">
+                <span class="tag">Azure Data Factory</span><span class="tag">Synapse</span><span class="tag">SSIS</span>
+                <span class="tag">Power BI</span><span class="tag">Azure DevOps</span>
+              </div>
+            </header>
+            <ul class="bullets">
+              <li>Engineered 10+ ETL pipelines with ADF/SSIS/SQL Server, integrating 8+ source systems into Azure Synapse.</li>
+              <li>Designed star schemas in Synapse, improving query performance by ~40% while reducing storage costs by 25%.</li>
+              <li>Automated extraction/transformation using Azure Functions + stored procedures; reduced manual effort by 70%.</li>
+              <li>Deployed real-time Power BI dashboards for 100+ users and improved decision response times.</li>
+              <li>Built CI/CD pipelines with Azure DevOps + Git; reduced deployment time by 70%.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Projects</h2>
+          <p class="section__subtitle">Five portfolio builds aligned to my stack (cloud + reporting). Exactly five.</p>
+        </div>
+
+        <div class="projects">
+          <!-- 1 -->
+          <article class="project reveal">
+            <div class="project__top">
+              <div class="project__icon"><i class="fa-brands fa-google" aria-hidden="true"></i></div>
+              <div>
+                <h3 class="project__title">Real‑Time Insurance Analytics on GCP</h3>
+                <p class="muted">Dataflow + Pub/Sub → BigQuery + Looker (governed, scalable insights)</p>
+              </div>
+            </div>
+            <ul class="bullets bullets--tight">
+              <li>Streaming ingestion for high‑velocity events using Pub/Sub with schema enforcement.</li>
+              <li>Batch + streaming transforms in Dataflow; BigQuery partitioning/clustering for cost control.</li>
+              <li>Looker semantic layer + dashboards for ops KPIs (freshness, volume, quality).</li>
+            </ul>
+            <div class="project__tags">
+              <span class="tag">GCP</span><span class="tag">Dataflow</span><span class="tag">Pub/Sub</span><span class="tag">BigQuery</span><span class="tag">Looker</span>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="project reveal">
+            <div class="project__top">
+              <div class="project__icon"><i class="fa-brands fa-aws" aria-hidden="true"></i></div>
+              <div>
+                <h3 class="project__title">Healthcare ELT Accelerator on AWS</h3>
+                <p class="muted">Glue + S3 → Snowflake/Redshift with DBT tests + Streamlit validation</p>
+              </div>
+            </div>
+            <ul class="bullets bullets--tight">
+              <li>Curated bronze/silver/gold layers with CDC-friendly models.</li>
+              <li>DBT macros/tests for schema drift & quality gates; incremental models for fast refresh.</li>
+              <li>Streamlit app to validate DBT outputs, monitor runs, and enable self‑service exploration.</li>
+            </ul>
+            <div class="project__tags">
+              <span class="tag">AWS</span><span class="tag">Glue</span><span class="tag">Snowflake</span><span class="tag">Redshift</span><span class="tag">DBT</span><span class="tag">Streamlit</span>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="project reveal">
+            <div class="project__top">
+              <div class="project__icon"><i class="fa-brands fa-microsoft" aria-hidden="true"></i></div>
+              <div>
+                <h3 class="project__title">Banking Data Platform Modernization on Azure</h3>
+                <p class="muted">ADF + Synapse + Functions → governed BI layer</p>
+              </div>
+            </div>
+            <ul class="bullets bullets--tight">
+              <li>ADF pipelines ingesting multi‑source data into Synapse with dimensional models.</li>
+              <li>Azure Functions for near‑real‑time triggers + automated transforms (stored procedures).</li>
+              <li>Power BI dashboards for executive reporting with RBAC + secure access patterns.</li>
+            </ul>
+            <div class="project__tags">
+              <span class="tag">Azure</span><span class="tag">ADF</span><span class="tag">Synapse</span><span class="tag">Functions</span><span class="tag">Power BI</span>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="project reveal">
+            <div class="project__top">
+              <div class="project__icon"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i></div>
+              <div>
+                <h3 class="project__title">Pipeline Observability & Data Quality Command Center</h3>
+                <p class="muted">CloudWatch/Logging + alerts + runbooks with Streamlit UI</p>
+              </div>
+            </div>
+            <ul class="bullets bullets--tight">
+              <li>Unified metrics (freshness, volume, SLAs) with alert routing and incident drill‑downs.</li>
+              <li>Quality checks at every layer: schema tests, anomaly detection, late-arrival tracking.</li>
+              <li>Streamlit “single pane of glass” for ops + stakeholders; automated weekly reports.</li>
+            </ul>
+            <div class="project__tags">
+              <span class="tag">Observability</span><span class="tag">CloudWatch</span><span class="tag">Cloud Logging</span><span class="tag">Streamlit</span><span class="tag">Terraform</span>
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="project reveal">
+            <div class="project__top">
+              <div class="project__icon"><i class="fa-solid fa-chart-column" aria-hidden="true"></i></div>
+              <div>
+                <h3 class="project__title">Executive KPI Reporting Hub</h3>
+                <p class="muted">Tableau + QuickSight on curated warehouse datasets</p>
+              </div>
+            </div>
+            <ul class="bullets bullets--tight">
+              <li>Certified datasets powering consistent metrics across departments.</li>
+              <li>Row-level security + performance tuning for interactive dashboards at scale.</li>
+              <li>Automated distribution of weekly/monthly KPI packs and ad-hoc exploration layer.</li>
+            </ul>
+            <div class="project__tags">
+              <span class="tag">Tableau</span><span class="tag">QuickSight</span><span class="tag">BI</span><span class="tag">Warehouse</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="note reveal">
+          <i class="fa-solid fa-gem" aria-hidden="true"></i>
+          <span>Want these projects to link to GitHub repos? Add repo URLs in <code>script.js</code> (marked clearly) and they’ll render automatically.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Contact</h2>
+          <p class="section__subtitle">Let’s build something reliable, fast, and measurable.</p>
+        </div>
+
+        <div class="contact grid2">
+          <div class="card reveal">
+            <h3 class="card__title">Reach me</h3>
+
+            <div class="contact__row">
+              <div class="contact__icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+              <div>
+                <div class="contact__label">Phone</div>
+                <a class="contact__value" href="tel:+17473637540">+1 (747) 363‑7540</a>
+              </div>
+            </div>
+
+            <div class="contact__row">
+              <div class="contact__icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+              <div>
+                <div class="contact__label">Email</div>
+                <a class="contact__value" href="mailto:pasupuletij398@gmail.com">pasupuletij398@gmail.com</a>
+              </div>
+              <button class="iconbtn" id="copyEmail2" aria-label="Copy email">
+                <i class="fa-regular fa-copy" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <div class="divider"></div>
+
+            <p class="muted">Prefer a quick note? Use the form — it opens your email client with a prefilled message.</p>
+
+            <div class="mini">
+              <span class="tag">Data Engineering</span>
+              <span class="tag">Analytics Engineering</span>
+              <span class="tag">Cloud</span>
+              <span class="tag">DBT</span>
+              <span class="tag">Streaming</span>
+            </div>
+          </div>
+
+          <div class="card card--shine reveal">
+            <h3 class="card__title">Send a message</h3>
+
+            <form class="form" id="contactForm">
+              <label class="field">
+                <span>Your name</span>
+                <input required name="name" type="text" placeholder="Your name" autocomplete="name" />
+              </label>
+
+              <label class="field">
+                <span>Your email</span>
+                <input required name="email" type="email" placeholder="you@email.com" autocomplete="email" />
+              </label>
+
+              <label class="field">
+                <span>Message</span>
+                <textarea required name="message" rows="5" placeholder="What are you building? What’s the goal?"></textarea>
+              </label>
+
+              <button class="btn btn--primary" type="submit">
+                <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+                <span>Open email</span>
+              </button>
+
+              <p class="fine muted">No backend required (GitHub Pages-friendly). Your email client will open with the message.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__left">
+          <span class="brand__text">Jayanth<span class="brand__dot">.</span></span>
+          <span class="muted">© <span id="year"></span> • Built with HTML, CSS, and JavaScript</span>
+        </div>
+
+        <div class="footer__right">
+          <a class="footer__link" href="#top">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
+    <i class="fa-regular fa-circle-check" aria-hidden="true"></i>
+    <span id="toastText">Copied!</span>
+  </div>
+
+  <script defer src="script.js"></script>
 </body>
 </html>
-
-
