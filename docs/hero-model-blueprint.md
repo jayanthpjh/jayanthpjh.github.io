@@ -8,13 +8,21 @@ A professional portfolio built around understandable data architectures and deli
 
 ## Editable project template
 
-Add an entry to `window.portfolioModels`, then add a native button to `.project-switch` and a project article using the same project key. Each article has a separate `data-select` button and independent repository link.
+Add an entry to `window.portfolioModels`, then add a native button to `.project-switch` and a project article using the same project key. Each article has a separate `data-select` button and independent repository link. Use domain-specific names in the tabs, not generic cloud labels.
 
 ```js
 example: {
   name: 'Project name',
   slug: 'repository-folder',
   evidence: 'Describe what was actually tested, and what is only documented.',
+  metrics: [
+    { value: '2',
+      label: 'ingestion paths',
+      context: 'Specific, documented project fact shown in the metric strip.' },
+    { value: 'CDC',
+      label: 'processing pattern',
+      context: 'Explain the pattern without inventing performance numbers.' }
+  ],
   nodes: [
     { id: 'source', title: 'Source system', caption: 'Input type',
       kind: 'storage', x: 15, y: 50,
@@ -32,15 +40,16 @@ example: {
 - Coordinates are percentages of the desktop scene. Leave room for module labels.
 - Node order determines keyboard and mobile reading order.
 - Project data is trusted, repository-authored content, not remote user input.
-- Keep technology claims and deployment evidence tied to project documentation.
+- Keep technology claims, deployment evidence, and project metrics tied to project documentation.
+- Keep the career metric strip in the professional experience section. The metric strip below the architecture is project-specific.
 
 ## Layout and state
 
-The page runs introduction → explorer → career evidence → personal builds → professional experience → delivery method → about → contact.
+The page runs introduction → explorer → selected-project evidence → personal builds → professional experience and career evidence → delivery method → about → contact.
 
-Default selection is GCP. GCP has five sequential modules; AWS has six modules including two parallel input paths; Azure has seven modules with a common quality gate. Selecting a project replaces all modules and edges immediately. This removes outgoing CSS animations without timers, so rapid selections cannot leave stale nodes. Stage selection changes the detail panel and incident edge highlights.
+Default selection is GCP. GCP has five sequential modules; AWS has six modules including two parallel input paths; Azure has seven modules with a common quality gate. Selecting a project replaces all modules, edges, deployment evidence, and metric tiles immediately. This removes outgoing CSS animations without timers, so rapid selections cannot leave stale nodes. Stage selection changes the detail panel and incident edge highlights.
 
-Project selectors and stages are native buttons exposing `aria-pressed`. A polite status announces project changes. Project-card actions move focus to the matching hero selector before scrolling; external links do not change selection. The noscript message preserves access to repository documentation.
+Project selectors and stages are native buttons exposing `aria-pressed`. A polite status announces project changes, and the metric tile region updates with the selected project. Project-card actions move focus to the matching hero selector before scrolling; external links do not change selection. The noscript message preserves access to repository documentation.
 
 ## Themes and motion
 
@@ -58,4 +67,4 @@ For Three.js/WebGL, keep the model keys, nodes, edges, selection controls, text 
 
 ## Release checks
 
-Check GCP/AWS/Azure node and edge counts (5/4, 6/5, 7/6), changing edge geometry, stage explanations, rapid selection, card-button focus, independent repository links, and theme persistence. Check motion disabled and resumed, no browser errors, unique IDs and local resources. Inspect desktop and phone screenshots in both themes and check overflow at 320, 390, 768, 1024, and 1440 px. Check primary text at 4.5:1 and controls at 3:1 contrast. Version CSS and script URLs together when publishing so cached assets cannot mix old and new markup. Verify GitHub Pages completion and live selectors after release.
+Check GCP/AWS/Azure node and edge counts (5/4, 6/5, 7/6), changing edge geometry, stage explanations, project metrics, rapid selection, card-button focus, independent repository links, and theme persistence. Check motion disabled and resumed, no browser errors, unique IDs and local resources. Inspect desktop and phone screenshots in both themes and check overflow at 320, 390, 768, 1024, and 1440 px. Check primary text at 4.5:1 and controls at 3:1 contrast. Version CSS and script URLs together when publishing so cached assets cannot mix old and new markup. Verify GitHub Pages completion and live selectors after release.

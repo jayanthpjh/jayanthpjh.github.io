@@ -1,8 +1,14 @@
 /* Renderer-independent topology. Coordinates are percentages of the desktop stage. */
 window.portfolioModels = {
   gcp: {
-    name: 'GCP Logistics', slug: 'logistics-lakehouse-gcp',
+    name: 'Shipment & Fulfillment', slug: 'logistics-lakehouse-gcp',
     evidence: 'Live-tested on real GCP. Cloud Composer was removed after validation to stop ongoing costs.',
+    metrics: [
+      { value: '3', label: 'medallion layers', context: 'Bronze, Silver, and Gold tables for logistics analysis.' },
+      { value: 'Batch', label: 'processing pattern', context: 'Cloud Composer coordinates the logistics workflow.' },
+      { value: 'GCP', label: 'tested environment', context: 'Validated with real Google Cloud infrastructure.' },
+      { value: '5', label: 'architecture stages', context: 'Storage, orchestration, validation, lakehouse, and serving.' }
+    ],
     nodes: [
       { id:'source', title:'GCS', caption:'Shipment & order files', kind:'storage', x:10,y:49, detail:'Land operational files in cloud storage, preserving the original source for repeatable processing.' },
       { id:'orchestrate', title:'Cloud Composer', caption:'Orchestrate the batch', kind:'compute', x:30,y:35, detail:'Coordinate scheduled tasks with Airflow dependencies. Deployment validation included real Cloud Composer.' },
@@ -12,8 +18,14 @@ window.portfolioModels = {
     ], edges:[['source','orchestrate'],['orchestrate','quality'],['quality','lake'],['lake','serve']]
   },
   aws: {
-    name:'AWS Commerce', slug:'ecommerce-lakehouse-databricks',
+    name:'Clickstream & Orders', slug:'ecommerce-lakehouse-databricks',
     evidence:'Live-tested on Databricks Free Edition. AWS S3 and Airflow deployment paths are documented.',
+    metrics:[
+      {value:'2',label:'ingestion paths',context:'Clickstream events and order-change records stay separate before merging.'},
+      {value:'CDC',label:'processing pattern',context:'Order inserts, updates, and deletes are applied into Delta.'},
+      {value:'Airflow',label:'orchestration path',context:'AWS and Airflow deployment guidance is documented.'},
+      {value:'6',label:'architecture stages',context:'Parallel source paths converge into a shared commerce lakehouse.'}
+    ],
     nodes:[
       {id:'events',title:'Clickstream',caption:'S3 deployment path',kind:'storage',x:10,y:25,detail:'Retain raw clickstream files. The repository documents an AWS S3 deployment path.'},
       {id:'orders',title:'Order changes',caption:'Inserts · updates · deletes',kind:'storage',x:10,y:73,detail:'Capture order changes separately so inserts, updates, and deletes can be merged predictably.'},
@@ -24,8 +36,14 @@ window.portfolioModels = {
     ], edges:[['events','loader'],['orders','cdc'],['loader','lake'],['cdc','lake'],['lake','serve']]
   },
   azure: {
-    name:'Azure Insurance',slug:'insurance-claims-lakehouse-azure',
+    name:'Claims & Quotes',slug:'insurance-claims-lakehouse-azure',
     evidence:'Live-tested on Databricks Free Edition. The real Azure deployment path is documented.',
+    metrics:[
+      {value:'2',label:'ingestion paths',context:'Quote streams and claims change feeds are modeled separately.'},
+      {value:'Rescue',label:'schema strategy',context:'Unexpected fields remain visible through schema rescue.'},
+      {value:'ADF',label:'deployment path',context:'Azure Data Factory deployment guidance is documented.'},
+      {value:'7',label:'architecture stages',context:'The model shows ingestion, CDC, quality, lakehouse, and serving.'}
+    ],
     nodes:[
       {id:'quotes',title:'Quote streams',caption:'ADLS deployment path',kind:'storage',x:9,y:25,detail:'Ingest quote events on a streaming path. Azure storage deployment is documented in the project.'},
       {id:'claims',title:'Claims changes',caption:'Batch change feed',kind:'storage',x:9,y:73,detail:'Process claims changes in batches alongside the separate quote stream.'},

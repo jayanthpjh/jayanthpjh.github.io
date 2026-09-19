@@ -5,6 +5,8 @@ const calmButton = document.querySelector('#calm-toggle');
 const scene = document.querySelector('#scene');
 const stages = document.querySelector('#stages');
 const connections = document.querySelector('#connections');
+const projectMetrics = document.querySelector('#project-metrics');
+const projectMetricsSummary = document.querySelector('#project-metrics-summary');
 const models = window.portfolioModels;
 let selected = 'gcp';
 let selectedStage;
@@ -61,6 +63,10 @@ function drawConnections() {
   }
   showStage(selectedStage);
 }
+function renderProjectMetrics(model) {
+  projectMetricsSummary.textContent = `${model.name} project metrics are selected.`;
+  projectMetrics.innerHTML = model.metrics.map(item=>`<article class="metric-card"><strong>${item.value}</strong><span>${item.label}</span><p>${item.context}</p></article>`).join('');
+}
 function selectProject(key,fromCard=false) {
   if(!models[key]) return;
   selected=key;const model=models[key];
@@ -71,6 +77,7 @@ function selectProject(key,fromCard=false) {
   stages.querySelectorAll('button').forEach(button=>button.addEventListener('click',()=>showStage(button.dataset.stage)));
   document.querySelector('#deployment-note').textContent=model.evidence;
   document.querySelector('#architecture-source').href=`https://github.com/jayanthpjh/data-engineering-projects/tree/main/${model.slug}`;
+  renderProjectMetrics(model);
   document.querySelector('#selection-status').textContent=`${model.name} selected. ${model.nodes.length} stages. Select a stage for its engineering details.`;
   showStage(model.nodes[0].id);
   // Read stable layout geometry; animation happens inside the stage, not on its button.
@@ -88,5 +95,5 @@ document.querySelectorAll('.project-card').forEach((card,index)=>card.insertAdja
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
   if(entry.isIntersecting){entry.target.classList.add('revealed');observer.unobserve(entry.target);}
 }),{threshold:.08});
-document.querySelectorAll('.mission-card,.method-grid article,.project-card,.about-grid,.contact-grid').forEach(element=>{element.classList.add('reveal');observer.observe(element);});
+document.querySelectorAll('.mission-card,.method-grid article,.project-card,.metric-card,.about-grid,.contact-grid').forEach(element=>{element.classList.add('reveal');observer.observe(element);});
 document.querySelector('#year').textContent=new Date().getFullYear();
